@@ -114,7 +114,7 @@ a {
   }
   100% {
     left: 0;
-    width: 51%;
+    width: 50%;
     height: 100%;
     border-radius: 0;
   }
@@ -125,7 +125,7 @@ a {
   }
   100% {
     right: 0;
-    width: 51%;
+    width: 50.1%;
     height: 100%;
     border-radius: 0;
   }
@@ -141,6 +141,7 @@ a {
   padding: 8px;
   border-radius: 3px;
   z-index: 3;
+  transition: var(--main-transition);
 }
 .scroll i {
   display: flex;
@@ -156,8 +157,6 @@ header {
   -webkit-box-shadow: 0 0 10px #ddd;
   -moz-box-shadow: 0 0 10px #ddd;
   box-shadow: 0 0 10px #ddd;
-  position: relative;
-  z-index: 4;
 }
 header .container {
   display: flex;
@@ -328,8 +327,9 @@ header .mega-menu .links li a {
 /* Start Landing */
 .landing {
   position: relative;
-  z-index: 3;
   padding-bottom: var(--main-padding-bottom);
+  overflow: hidden;
+  z-index: 3;
 }
 .landing::before {
   position: absolute;
@@ -364,6 +364,9 @@ header .mega-menu .links li a {
   font-size: 40px;
   margin-bottom: 7px;
   letter-spacing: -2px;
+}
+.landing .container .text span {
+  color: var(--main-color-alt);
 }
 .landing .container .text p {
   max-width: 500px;
