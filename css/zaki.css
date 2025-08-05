@@ -716,9 +716,95 @@ header .mega-menu .links li a {
   color: #ffc107;
 }
 .testimonials .box .stars .empty {
-  color: #999
+  color: #999;
 }
 /* End Testimonials */
+/* Start Team Members */
+.team-members {
+  padding-top: var(--main-padding-top);
+  padding-bottom: var(--main-padding-bottom);
+}
+.team-members .members {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 50px;
+  row-gap: 75px;
+}
+.team-members .member {
+  position: relative;
+}
+.team-members .member::before {
+  position: absolute;
+  content: "";
+  height: 110%;
+  width: 80%;
+  right: 0;
+  top: -40px;
+  z-index: -1;
+  border-radius: 7px;
+  background-color: #f3f3f3;
+}
+.team-members .member::after {
+  position: absolute;
+  content: "";
+  height: 110%;
+  width: 0;
+  right: 0;
+  top: -40px;
+  z-index: -1;
+  border-radius: 7px;
+  background-color: #e4e4e4;
+  transition: var(--main-transition);
+}
+.team-members .member:hover::after {
+  width: 80%;
+}
+
+.team-members .member .image img {
+  width: 85%;
+  max-width: 85%;
+  border-radius: 10px;
+  box-shadow: 0px 0px 3px #000;
+  transition: var(--main-transition);
+}
+.team-members .member:hover .image img {
+  filter: grayscale(100%);
+}
+.team-members .member .links {
+  position: absolute;
+  right: 15px;
+  top: 17%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+.team-members .member .links a {
+  color: #777;
+  transition: var(--main-transition);
+}
+.team-members .member .links a:hover {
+  color: var(--main-color);
+}
+.team-members .member .text {
+  color: white;
+  padding: 10px 10px 10px 85px;
+}
+.team-members .member .text h3 {
+  color: var(--main-color);
+  padding: 7px 0;
+  font-size: 23px;
+  transition: var(--main-transition);
+}
+.team-members .member:hover .text h3 {
+  color: #777;
+}
+.team-members .member .text p {
+  color: #111;
+  font-size: 17px;
+}
+/* End Team Members */
 
 /* Start Animation */
 @keyframes border {
@@ -737,7 +823,7 @@ header .mega-menu .links li a {
   }
   100% {
     left: 0;
-    width: 50%;
+    width: 51%;
     height: 100%;
     border-radius: 0;
   }
@@ -750,7 +836,7 @@ header .mega-menu .links li a {
   }
   100% {
     right: 0;
-    width: 50.1%;
+    width: 51%;
     height: 100%;
     border-radius: 0;
   }
