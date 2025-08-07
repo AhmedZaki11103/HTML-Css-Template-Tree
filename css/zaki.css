@@ -46,6 +46,7 @@ a {
   padding-right: 15px;
   margin-left: auto;
   margin-right: auto;
+  position: relative;
 }
 /* Small */
 @media (min-width: 768px) {
@@ -1055,7 +1056,7 @@ header .mega-menu .links li a {
 }
 .back {
   position: absolute;
-  z-index: -1;
+  filter: hue-rotate(48deg); /* عشان أخلي الصورة بلون زي هوية الموقع */
 }
 .back.left {
   left: 0;
@@ -1066,7 +1067,7 @@ header .mega-menu .links li a {
   top: 20%;
 }
 @media (max-width: 767px) {
-  .back {
+  .events .back {
     display: none;
   }
 }
@@ -1083,7 +1084,7 @@ header .mega-menu .links li a {
     display: none;
   }
   .events .events-content .info .text p {
-    background-color: #ffffffcf;
+    background-color: #ffffff78;
   }
 }
 .events .events-content .info .counter {
@@ -1190,6 +1191,132 @@ header .mega-menu .links li a {
   }
 }
 /* End Latest Events */
+
+/* Start Pricing */
+.pricing {
+  padding-top: var(--main-padding-top);
+  padding-bottom: var(--main-padding-bottom);
+  background-color: var(--section-background);
+  position: relative;
+}
+.pricing .plans {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 40px;
+}
+.pricing .plans .plan {
+  background-color: white;
+  text-align: center;
+  position: relative;
+  border-radius: 5px;
+  box-shadow: 0 12px 20px 0 rgb(0 0 0 / 13%), 0 2px 4px 0 rgb(0 0 0 / 12%);
+}
+.pricing .plans .plan::before,
+.pricing .plans .plan::after {
+  position: absolute;
+  content: "";
+  transition: var(--main-transition);
+  height: 50%;
+  width: 0;
+  background-color: #7e57c21a;
+}
+.pricing .plans .plan::before {
+  top: 0;
+  left: 0;
+}
+.pricing .plans .plan::after {
+  bottom: 0;
+  right: 0;
+}
+.pricing .plans .plan:hover::before,
+.pricing .plans .plan:hover::after {
+  width: 100%;
+}
+@media (min-width: 1200px) {
+  .pricing .plans .plan:nth-child(2) {
+    transform: translatey(-25px);
+  }
+}
+.pricing .plans .plan .head {
+  padding-bottom: 15px;
+}
+.pricing .plans .plan .head .most {
+  position: absolute;
+  right: -27px;
+  top: 52.7px;
+  padding: 10px 30px 10px 10px;
+  transform: rotate(90deg);
+  font-size: 18px;
+  font-weight: bold;
+  color: white;
+  background-color: var(--main-color);
+}
+.pricing .plans .plan .head .most::before {
+  position: absolute;
+  content: "";
+  right: -1px;
+  top: 50%;
+  transform: translateY(-50%);
+  border: 23px solid black;
+  border-right-color: white;
+  border-color: transparent white transparent transparent;
+}
+
+.pricing .plans .plan .head h3 {
+  margin: 30px 0;
+  font-size: 25px;
+}
+.pricing .plans .plan .head img {
+  width: 80px;
+  filter: hue-rotate(48deg);
+  margin-bottom: 30px;
+}
+.pricing .plans .plan .head span {
+  display: block;
+}
+.pricing .plans .plan .head span.mony {
+  font-size: 55px;
+  font-weight: bold;
+  color: var(--main-color);
+}
+.pricing .plans .plan .head span.time {
+  color: #777;
+  margin: 5px 0;
+}
+.pricing .plans .plan ul {
+  text-align: left;
+}
+.pricing .plans .plan ul li {
+  border-top: 1px solid #eee;
+  padding: 15px 0 15px 15px;
+}
+.pricing .plans .plan ul li::before {
+  font-family: "Font Awesome 5 Free";
+  content: "\f00c";
+  font-weight: bold;
+  color: var(--main-color);
+  margin-right: 10px;
+}
+
+.pricing .plans .plan .feet a {
+  margin: 30px auto 35px;
+  display: block;
+  width: fit-content;
+  padding: 15px 18px;
+  background-color: transparent;
+  color: var(--main-color);
+  border: 2px solid var(--main-color);
+  border-radius: 7px;
+  font-weight: bold;
+  transition: var(--main-transition);
+  position: relative;
+  z-index: 1;
+}
+.pricing .plans .plan .feet a:hover {
+  background-color: var(--main-color);
+  color: white;
+}
+/* End Pricing */
 
 /* Start Animation */
 @keyframes border {
