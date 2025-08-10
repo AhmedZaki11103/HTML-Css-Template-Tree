@@ -1438,7 +1438,6 @@ header .mega-menu .links li a {
   position: absolute;
   content: "";
   background-color: var(--main-color);
-  background-color: #9434b1;
   transition: 0.7s;
   width: 5px;
   height: 0;
@@ -1799,3 +1798,4 @@ footer .feet span {
   }
 }
 /* End Animation */
+
